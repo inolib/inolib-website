@@ -7,17 +7,6 @@ export default {
     cpus: 12,
     workerThreads: false,
   },
-  images: {
-    disableStaticImages: true,
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "**.inolib.fr",
-        port: "",
-        search: "",
-      },
-    ],
-  },
   webpack: (config) => {
     const fileLoaderRule = config.module.rules.find((rule) => rule.test?.test?.(".svg"));
 
