@@ -8,6 +8,7 @@ export default {
     workerThreads: false,
   },
   images: {
+    disableStaticImages: true,
     remotePatterns: [
       {
         protocol: "https",
