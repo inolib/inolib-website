@@ -1,0 +1,48 @@
+name: "inolib-website"
+
+services:
+  mariadb:
+    build: "./mariadb"
+    restart: "unless-stopped"
+    volumes:
+      - "mariadb:/var/lib/mysql"
+
+  phpmyadmin:
+    build: "./phpmyadmin"
+    depends_on:
+      mariadb:
+        condition: "service_healthy"
+    ports:
+      - "9001:80"
+    restart: "unless-stopped"
+
+  wordpress-cli:
+    build: "./wordpress-cli"
+    depends_on:
+      mariadb:
+        condition: "service_healthy"
+    restart: "unless-stopped"
+    volumes:
+      - "../../packages/app-wordpress:/var/www/html"
+
+  wordpress:
+    build: "./wordpress"
+    depends_on:
+      wordpress-cli:
+        condition: "service_healthy"
+    ports:
+      - "9002:80"
+    restart: "unless-stopped"
+    volumes:
+      - "../../packages/app-wordpress:/var/www/html"
+
+  devcontainer:
+    build: "./devcontainer"
+    depends_on:
+      wordpress-cli:
+        condition: "service_healthy"
+    volumes:
+      - "../../..:/@inolib"
+
+volumes:
+  mariadb:

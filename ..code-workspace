@@ -1,0 +1,24 @@
+{
+  "folders": [
+    {
+      "name": "@inolib/website",
+      "path": ".",
+    },
+    {
+      "name": "@inolib/app-wordpress",
+      "path": "./packages/app-wordpress",
+    },
+    {
+      "name": "@inolib/app-www",
+      "path": "./packages/app-www",
+    },
+    {
+      "name": "@inolib/config-eslint",
+      "path": "./packages/config-eslint",
+    },
+    {
+      "name": "@inolib/config-prettier",
+      "path": "./packages/config-prettier",
+    },
+  ],
+}

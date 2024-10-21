@@ -1,0 +1,81 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.schema.json",
+  "dockerComposeFile": "./docker/compose.yaml",
+  "name": "@inolib/website",
+  "postCreateCommand": ["fish", "./.devcontainer/hooks/postCreate.fish"],
+  "service": "devcontainer",
+  "shutdownAction": "stopCompose",
+  "workspaceFolder": "/@inolib/website",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bmalehorn.vscode-fish", // Fish
+        "ms-azuretools.vscode-docker", // Docker
+        "dbaeumer.vscode-eslint", // ESLint
+        "editorconfig.editorconfig", // EditorConfig
+        "eamodio.gitlens", // GitLens
+        "visualstudioexptteam.vscodeintellicode", // IntelliCode
+        "ms-vsliveshare.vsliveshare", // Live Share
+        "valeryanm.vscode-phpsab", // PHP Sniffer & Beautifier
+        "esbenp.prettier-vscode", // Prettier
+        "yoavbls.pretty-ts-errors", // Pretty TypeScript Errors
+        "bradlc.vscode-tailwindcss", // Tailwind CSS IntelliSense
+        "mxsdev.typescript-explorer", // TypeScript Explorer
+        "redhat.vscode-yaml" // YAML
+      ],
+
+      "settings": {
+        // Docker
+        "[dockerfile]": {
+          "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+        },
+
+        // ESLint
+        "editor.codeActionsOnSave": {
+          "source.fixAll.eslint": "always"
+        },
+        "eslint.validate": ["javascript", "javascriptreact", "typescript", "typescriptreact"],
+
+        // Fish
+        "[fish]": {
+          "editor.defaultFormatter": "bmalehorn.vscode-fish"
+        },
+
+        // JavaScript
+        "javascript.validate.enable": false,
+
+        // Live Share
+        "liveshare.languages.allowGuestCommandControl": true,
+
+        // PHP
+        "[php]": {
+          "editor.defaultFormatter": "valeryanm.vscode-phpsab"
+        },
+
+        // PHP Sniffer & Beautifier
+        "phpsab.executablePathCBF": "/@inolib/website/vendor/bin/phpcbf",
+        "phpsab.executablePathCS": "/@inolib/website/vendor/bin/phpcs",
+        "phpsab.snifferMode": "onType",
+        "phpsab.standard": "WordPress",
+
+        // Prettier
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+        // Tailwind CSS IntelliSense
+        "tailwindCSS.experimental.classRegex": [
+          ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+          ["([\"'`][^\"'`]*.*?[\"'`])", "[\"'`]([^\"'`]*).*?[\"'`]"]
+        ],
+        "tailwindCSS.lint.cssConflict": "ignore",
+
+        // TypeScript
+        "typescript.tsdk": "/@inolib/website/node_modules/typescript/lib",
+        "typescript.validate.enable": true,
+
+        // Visual Studio Code
+        "editor.formatOnSave": true
+      }
+    }
+  }
+}

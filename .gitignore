@@ -1,0 +1,12 @@
+**/.next/
+**/dist/
+**/node_modules/
+**/vendor/
+**/.DS_Store
+**/.env
+**/.env.*
+**/next-env.d.ts
+**/phpinfo.php
+
+!/packages/config-eslint/dist/
+!/packages/config-prettier/dist/

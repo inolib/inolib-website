@@ -1,0 +1,44 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@inolib/app-www",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "pnpm run build:app && pnpm run build:server",
+    "build:app": "next build",
+    "build:server": "tsup",
+    "format": "pnpm run format:prettier && pnpm run format:eslint",
+    "format:eslint": "eslint --fix --format silent .",
+    "format:prettier": "prettier --log-level warn --write .",
+    "lint": "pnpm run lint:eslint && pnpm run lint:tsc",
+    "lint:eslint": "eslint .",
+    "lint:tsc": "tsc",
+    "serve:development": "dotenvx run -- tsx ./src/server.ts",
+    "serve:production": "dotenvx run -f ./.env.production -- node ./dist/server.cjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/manrope": "^5.1.0",
+    "@modular-forms/react": "^0.10.1",
+    "@preact/signals-react": "^2.2.0",
+    "clsx": "^2.1.1",
+    "next": "^14.2.15",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "tailwind-merge": "^2.5.4",
+    "tailwind-variants": "^0.2.1",
+    "valibot": "1.0.0-beta.1"
+  },
+  "devDependencies": {
+    "@dotenvx/dotenvx": "^1.20.0",
+    "@svgr/webpack": "^8.1.0",
+    "@types/node": "^22.7.7",
+    "@types/react": "^18.3.11",
+    "@types/react-dom": "^18.3.1",
+    "autoprefixer": "^10.4.20",
+    "postcss": "^8.4.47",
+    "tailwindcss": "^3.4.14",
+    "tsup": "^8.3.0",
+    "tsx": "^4.19.1",
+    "typescript": "^5.6.3"
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "@inolib/config-eslint",
+  "private": true,
+  "type": "module",
+  "exports": {
+    ".": "./dist/index.js"
+  },
+  "scripts": {
+    "format": "pnpm run format:prettier && pnpm run format:eslint",
+    "format:eslint": "eslint --fix --format silent .",
+    "format:prettier": "prettier --log-level warn --write .",
+    "lint": "pnpm run lint:eslint",
+    "lint:eslint": "eslint ."
+  },
+  "dependencies": {
+    "@eslint/compat": "^1.2.1",
+    "@eslint/eslintrc": "^3.1.0",
+    "@eslint/js": "^9.13.0",
+    "eslint": "^9.13.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-formatter-silent": "^1.0.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import-x": "^4.3.1",
+    "eslint-plugin-jsdoc": "^50.4.3",
+    "eslint-plugin-jsx-a11y": "^6.10.0",
+    "eslint-plugin-perfectionist": "^3.9.1",
+    "eslint-plugin-react": "^7.37.1",
+    "eslint-plugin-react-hooks": "^5.0.0",
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "globals": "^15.11.0",
+    "typescript-eslint": "^8.10.0"
+  },
+  "devDependencies": {
+    "@types/eslint__eslintrc": "^2.1.2",
+    "@types/eslint__js": "^8.42.3",
+    "prettier": "^3.3.3",
+    "prettier-plugin-packagejson": "^2.5.3"
+  },
+  "peerDependencies": {
+    "@eslint/compat": "^1.0.0",
+    "@eslint/eslintrc": "^3.0.0",
+    "@eslint/js": "^9.0.0",
+    "eslint": "^9.0.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-formatter-silent": "^1.0.0",
+    "eslint-import-resolver-typescript": "^3.0.0",
+    "eslint-plugin-import-x": "^4.0.0",
+    "eslint-plugin-jsdoc": "^50.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.0",
+    "eslint-plugin-perfectionist": "^3.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "eslint-plugin-react-hooks": "^4.0.0",
+    "eslint-plugin-tailwindcss": "^3.0.0",
+    "eslint-plugin-unicorn": "^56.0.0",
+    "globals": "^15.0.0",
+    "typescript-eslint": "^8.0.0"
+  }
+}
