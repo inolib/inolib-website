@@ -5,11 +5,6 @@ import { Heading, HeadingContent } from "~/components/heading";
 import { Section } from "~/components/section";
 import { tv } from "~/helpers";
 
-import auroreMauveVoeltzelPhoto from "#/images/photos/team/aurore-mauve-voeltzel.jpg";
-import djebrineAlouiPhoto from "#/images/photos/team/djebrine-aloui.jpg";
-import matthieuMeignanPhoto from "#/images/photos/team/matthieu-meignan.jpg";
-import nadjematiAbdallahPhoto from "#/images/photos/team/nadjemati-abdallah.jpg";
-
 const variants = tv({
   slots: {
     sectionClassName: "flex flex-col gap-24",
@@ -37,37 +32,37 @@ export const Team = ({ _color }: TeamProps) => {
 
   const team = [
     {
-      photo: djebrineAlouiPhoto,
+      photo: "/images/photos/team/djebrine-aloui.jpg",
       name: "Djebrine ALOUI",
       role: "Dirigeant et fondateur",
       description: "",
     },
     {
-      photo: auroreMauveVoeltzelPhoto,
+      photo: "/images/photos/team/aurore-mauve-voeltzel.jpg",
       name: "Aurore-Mauve VOELTZEL",
       role: "Développeuse économique",
       description: "",
     },
     {
-      photo: matthieuMeignanPhoto,
+      photo: "/images/photos/team/matthieu-meignan.jpg",
       name: "Matthieu MEIGNAN",
       role: "Directeur technique",
       description: "",
     },
     {
-      photo: nadjematiAbdallahPhoto,
+      photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Nadjemati ABDALLAH",
       role: "",
       description: "",
     },
     {
-      photo: nadjematiAbdallahPhoto,
+      photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Amina HURIC",
       role: "",
       description: "",
     },
     {
-      photo: nadjematiAbdallahPhoto,
+      photo: "/images/photos/team/nadjemati-abdallah.jpg",
       name: "Brice MENDEZ",
       role: "Développeur web",
       description: "",
